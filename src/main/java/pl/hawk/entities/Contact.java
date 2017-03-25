@@ -7,7 +7,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity // Dzieki temu informujemy Hibernate do utworzenia tabeli z tej klasy
+/**
+ * Entity - Dzieki temu informujemy Hibernate do utworzenia tabeli z tej klasy
+ * 
+ * @author Hawk
+ *
+ */
+@Entity
 public class Contact {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
