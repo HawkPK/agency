@@ -27,7 +27,7 @@ public class ContactController {
 	 */
 	@RequestMapping(value = "/contacts", method = RequestMethod.GET)
 	public String list(Model model){
-		model.addAttribute("contact",contactService.listAllContacts());
+		model.addAttribute("contacts",contactService.listAllContacts());
 		System.out.println("Returning contacts:");
 		return "contacts";
 	}
@@ -68,8 +68,8 @@ public class ContactController {
 	 */
     @RequestMapping("contact/new")
     public String newProduct(Model model) {
-        model.addAttribute("product", new Contact());
-        return "productform";
+        model.addAttribute("contact", new Contact());
+        return "contactform";
     }
     
     /**
@@ -78,10 +78,10 @@ public class ContactController {
      * @param contact
      * @return
      */
-    @RequestMapping(value = "product", method = RequestMethod.POST)
+    @RequestMapping(value = "contact", method = RequestMethod.POST)
     public String saveProduct(Contact contact) {
         contactService.saveContact(contact);
-        return "redirect:/product/" + contact.getId();
+        return "redirect:/contact/" + contact.getId();
     }
 	
     /**
@@ -90,7 +90,7 @@ public class ContactController {
      * @param id
      * @return
      */
-    @RequestMapping("product/delete/{id}")
+    @RequestMapping("contact/delete/{id}")
     public String delete(@PathVariable Integer id) {
         contactService.deleteContact(id);
         return "redirect:/contacts";
