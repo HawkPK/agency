@@ -24,4 +24,8 @@ mvn spring-boot:run
 kliknac http://localhost:8080/
 Haslo i przykladowy uzytkownik zostal ustawiony na imie: user i haslo: password.
 
+5:)
+Projekt jest dostepny na moim koncie na github:
+https://github.com/HawkPK/agency
+
 
