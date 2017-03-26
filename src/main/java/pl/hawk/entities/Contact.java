@@ -2,13 +2,16 @@ package pl.hawk.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
- * Entity - Dzieki temu informujemy Hibernate do utworzenia tabeli z tej klasy
+ * Entity Contact - adnotacja Entity, ktora wykorzystuje Hibernate do skladowania danych w bazie danych
  * 
  * @author Hawk
  *
@@ -23,13 +26,17 @@ public class Contact {
     
     private String surname;
     
+    @Column(unique = true)
     private String email;
     
     private String category;
     
     private String phone;
     
+    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date birthDate;
+    
+    private String password;
 
 	public Integer getId() {
 		return id;
@@ -87,7 +94,13 @@ public class Contact {
 		this.birthDate = birthDate;
 	}
 
+	public String getPassword() {
+		return password;
+	}
 
+	public void setPassword(String password) {
+		this.password = password;
+	}
     
 
 }

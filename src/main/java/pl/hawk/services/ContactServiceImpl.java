@@ -7,6 +7,12 @@ import pl.hawk.entities.Contact;
 import pl.hawk.repository.CategoryRepository;
 import pl.hawk.repository.ContactRepository;
 
+/**
+ * 
+ * Implementacja usług dla kontaktu 
+ * @author Hawk
+ *
+ */
 @Service
 public class ContactServiceImpl implements ContactService {
 

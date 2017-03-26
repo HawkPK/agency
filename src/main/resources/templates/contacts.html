@@ -17,8 +17,8 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
                     <ul class="nav navbar-nav">
-                        <li><a href="#" th:href="@{/contacts}">Products</a></li>
-                        <li><a href="#" th:href="@{/contact/new}">Create new product</a></li>
+                        <li><a href="#" th:href="@{/contacts}">Kontakty</a></li>
+                        <li><a href="#" th:href="@{/contact/new}">Utworzenie nowego kontaktu</a></li>
                     </ul>
 
                 </div>
@@ -28,12 +28,8 @@
         <div class="jumbotron">
             <div class="row text-center">
                 <div class="">
-                    <h2>Spring Boot Example</h2>
                     <h3>Welcome</h3>
                 </div>
-            </div>
-            <div class="row text-center">
-                <img src="../../static/images/boot.png" width="200" th:src="@{/images/boot.png}"/>
             </div>
         </div>
 
@@ -44,17 +40,27 @@
         <table class="table table-striped">
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Imie</th>
+                <th>Nazwisko</th>
+                <th>Telefon</th>
+                <th>Email</th>
+                <th>Data urodzenia</th>
+                <th>Typ</th>
                 <th>View</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
             <tr th:each="contact : ${contacts}">
                 <td th:text="${contact.id}"><a href="/contacts/${contact.id}">Id</a></td>
-                <td th:text="${contact.name}">descirption</td>
-                <td><a th:href="${ '/contact/' + contact.id}">View</a></td>
-                <td><a th:href="${'/contact/edit/' + contact.id}">Edit</a></td>
-                <td><a th:href="${'/contact/delete/' + contact.id}">Delete</a></td>
+                <td th:text="${contact.name}">Imie</td>
+                <td th:text="${contact.surname}">Nazwisko</td>
+                <td th:text="${contact.phone}">Telefon</td>
+                <td th:text="${contact.Email}">Email</td>
+                <td th:text="${contact.birthDate}">Data urodzenia</td>
+                <td th:text="${contact.category}">Typ</td>
+                <td><a th:href="${ '/contact/' + contact.id}">Szczegoly</a></td>
+                <td><a th:href="${'/contact/edit/' + contact.id}">Edycja</a></td>
+                <td><a th:href="${'/contact/delete/' + contact.id}">Usun</a></td>
             </tr>
         </table>
 

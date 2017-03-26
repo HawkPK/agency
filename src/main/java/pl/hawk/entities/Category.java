@@ -7,6 +7,12 @@ import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * 
+ * Entity Category - adnotacja Entity, ktora wykorzystuje Hibernate do skladowania danych w bazie danych
+ * @author Hawk
+ *
+ */
 @Entity
 @Component
 public class Category {
@@ -31,7 +37,5 @@ public class Category {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-    
-    
+	}   
 }
