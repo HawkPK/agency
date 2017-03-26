@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import pl.hawk.entities.Category;
 import pl.hawk.entities.Contact;
 import pl.hawk.services.ContactService;
 
@@ -69,6 +71,7 @@ public class ContactController {
     @RequestMapping("contact/new")
     public String newProduct(Model model) {
         model.addAttribute("contact", new Contact());
+        model.addAttribute("category", contactService.listAllCategory());
         return "contactform";
     }
     
