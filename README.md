@@ -3,7 +3,7 @@ Build and run
 1:)
 Otworzyc plik i ustawic tak jak ponizej application.properties:
 
-spring.jpa.hibernate.ddl-auto=create
+spring.jpa.hibernate.ddl-auto=none
 spring.datasource.url=jdbc:mysql://localhost:3306/db_agency
 spring.datasource.username=agent
 spring.datasource.password=gdanskOgorek
