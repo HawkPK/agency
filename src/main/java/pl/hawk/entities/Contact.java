@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Pattern;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -36,6 +37,8 @@ public class Contact {
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date birthDate;
     
+    @Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})"
+    		,message="Hasło powinno zawierać: min jedną liczbę (0-9), jedną małą i jedną dużą literę, specjalny znak i min 6 i max 20 znaków")
     private String password;
 
 	public Integer getId() {

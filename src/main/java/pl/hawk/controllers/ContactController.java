@@ -1,5 +1,9 @@
 package pl.hawk.controllers;
 
+import java.util.regex.Pattern;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import pl.hawk.entities.Category;
 import pl.hawk.entities.Contact;
 import pl.hawk.services.ContactService;
 
@@ -84,8 +87,8 @@ public class ContactController {
      * @return
      */
     @RequestMapping(value = "contact", method = RequestMethod.POST)
-    public String saveProduct(Contact contact, BindingResult bindingResult,Model model) {
-    	
+    public String saveProduct(@Valid Contact contact, BindingResult bindingResult,Model model) {
+		
         if (bindingResult.hasErrors()) {
         	model.addAttribute("category", contactService.listAllCategory());
         	System.out.println(bindingResult.getFieldError());
