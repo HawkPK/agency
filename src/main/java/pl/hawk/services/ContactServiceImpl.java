@@ -4,8 +4,10 @@ import org.springframework.stereotype.Service;
 
 import pl.hawk.entities.Category;
 import pl.hawk.entities.Contact;
+import pl.hawk.entities.Subcategory;
 import pl.hawk.repository.CategoryRepository;
 import pl.hawk.repository.ContactRepository;
+import pl.hawk.repository.SubcategoryRepository;
 
 /**
  * 
@@ -16,13 +18,16 @@ import pl.hawk.repository.ContactRepository;
 @Service
 public class ContactServiceImpl implements ContactService {
 
+	
 	private ContactRepository contactRepository;
 	private CategoryRepository category;
+	private SubcategoryRepository subcategory;
 	
     @Autowired
-    public void setProductRepository(ContactRepository contactRepository, CategoryRepository category) {
+    public void setProductRepository(ContactRepository contactRepository, CategoryRepository category, SubcategoryRepository subcategory) {
         this.contactRepository = contactRepository;
         this.category = category;
+        this.subcategory = subcategory;
     }
 	
     @Override
@@ -52,6 +57,12 @@ public class ContactServiceImpl implements ContactService {
 	@Override
 	public Iterable<Category> listAllCategory() {
 		return category.findAll();
+	}
+
+	@Override
+	public Iterable<Subcategory> listAllSubcategory() {
+		// TODO Auto-generated method stub
+		return subcategory.findAll();
 	}
 
 }
